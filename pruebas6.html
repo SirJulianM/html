@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            height: 100vh;
+            padding-top: 165px;
+            font-family: sans-serif;
+            background: #240F52;
+            overflow: hidden;
+        } 
+
+        .outer{
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #FEED07 0%, #FE6A50 5%, #ED00AA 15%, #2FE3FE 50%, #8900FF 100%);
+            border-radius: 50%;
+        }
+
+        .outer .activate-loader{
+            animation: rotate 2s ease infinite;
+        }
+
+        @keyframes rotate {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .outer .activate-loader2{
+            animation: rotate2 3s ease;
+        }
+
+        @keyframes rotate2 {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .inner{
+            position: absolute;
+            width: 275px;
+            height: 275px;
+            text-align: center;
+            line-height: 275px;
+            background: #240F52;
+            border-radius: 50%;
+            margin-top: 12px;
+            cursor: default;
+        }
+
+        .inner span{
+            font-size: 60px;
+            font-weight: 800;
+            color: transparent;
+            background: linear-gradient(135deg, #FEED07 0%, #FE6A50 5%, #ED00AA 15%, #2FE3FE 50%, #8900FF 100%);
+            -webkit-background-clip: text;
+            background-size: 300%;
+        }
+    </style>
+</head>
+<body>
+    <!--No funciona-->
+    <div class="outer"></div>
+    <div class="inner">
+        <span>0%</span>
+    </div>
+    <!-- <script>
+        let outer = document.querySelector('.outer');
+        let inner = document.querySelector('.inner');
+        let percent = document.querySelector('.span');
+        let count = 0;
+        inner.addEventListener('click', ()=>{
+            let loading = setInterval(animate, 100);
+            function animate(){
+                if(count == 100){
+                    outer.classList.remove("activate-loader");
+                    outer.classList.add("activate-loader2");
+                    clearInterval();
+                }else{
+                    count = count + 1;
+                    percent.textContent = count + "%";
+                    outer.classList.add("activate-loader");
+                }
+            }
+        });
+    </script> -->
+</body>
+</html>
