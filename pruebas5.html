@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgb(26, 43, 68);
+        }
+
+        .container{
+            background: #FFF;
+            width: 400px;
+            height: 380px;
+            padding: 50px;
+            border-radius: 50px;
+            box-shadow: 0 0 20px rgba(0,0,0,.9);
+        }
+
+        .container .password{
+            width: 100%;
+            height: 45px;
+            padding: 0 50px 0 20px;
+            border-radius: 5px;
+            font-size: large;
+            background: #F5F5F5;
+            border: 1px solid rgb(20, 223, 223);
+            transition: .4s;
+        }
+
+        .container .password:focus{
+            box-shadow: 0 0 30px aqua;
+        }
+
+        .container p{
+            margin: 10px 10px 30px;
+            opacity: .5;
+            transition: .3s;
+        }
+
+        .container p span{
+            font-size: 22px;
+            color: rgb(26, 43, 68);
+            margin-left: 45px;
+        }
+
+        .fa-check{
+            opacity: 0;
+        }
+
+        .fa-times{
+            opacity: 1;
+        }
+
+        .container p i{
+            position: absolute;
+            text-align: center;
+            width: 32px;
+            height: 32px;
+            line-height: 30px;
+            font-size: large;
+            border-radius: 50%;
+        }
+
+        .container #show-hide{
+            color: rgb(26,43,68);
+            font-size: 22px;
+            transform: translateX(260px) translateY(-34px);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="password" class="password" placeholder="Enter your password" oninput="textChange()" required/>
+        <!-- <i class="fas fa-eye" id="show_hide" onclick="showHide()"></i> -->
+        <p id="capital">
+            <i class="fas fa-times"></i>
+            <i class="fas fa-check"></i>
+            <span>Capital letters</span>
+        </p>
+        <p id="char">
+            <i class="fas fa-times"></i>
+            <i class="fas fa-check"></i>
+            <span>Special characters</span>
+        </p>
+        <p id="num">
+            <i class="fas fa-times"></i>
+            <i class="fas fa-check"></i>
+            <span>Using numbers</span>
+        </p>
+        <p id="more8">
+            <i class="fas fa-times"></i>
+            <i class="fas fa-check"></i>
+            <span>8+ characters</span>
+        </p>
+    </div>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <script>
+
+        /*Variables*/
+        let show_hide = document.querySelector("#show_hide");
+        const password = document.querySelector('.password');
+
+        /*Métodos*/
+        function showHide(){
+            if(show_hide.className == 'fas fa-eye'){
+                show_hide.className == 'fas fa-eye-slash',
+                password.type = "text";
+            }
+            else{
+                show_hide.className == "fas fa-eye";
+                password.type = "password";
+            }
+        }
+
+        function valid(item, v_icons, inv_icons){
+            let text = document.querySelector(`#${item}`);
+            text.style.opacity = 1;
+            let valid_icon = document.querySelector(`#${item} .${v_icons}`);
+            valid_icon.style.opacity = 1;
+            let invalid_icon = document.querySelector(`#${item} .${inv_icons}`);
+            invalid_icon.style.opacity = 0;
+        }
+
+        function invalid(item, v_icons, inv_icons){
+            let text = document.querySelector(`#${item}`);
+            text.style.opacity = .5;
+            let valid_icon = document.querySelector(`#${item} .${v_icons}`);
+            valid_icon.style.opacity = 0;
+            let invalid_icon = document.querySelector(`#${item} .${inv_icons}`);
+            invalid_icon.style.opacity = 1;
+        }
+
+        function textChange(){
+            if(password.value.match(/[A-Z]/)!=null){
+                valid('capital', 'fa-check', 'fa-times');
+            }
+            else{
+                invalid('capital', 'fa-check', 'fa-times');
+            }
+            if(password.value.match(/[0-9]/)!=null){
+                valid('num', 'fa-check', 'fa-times');
+            }
+            else{
+                invalid('num', 'fa-check', 'fa-times');
+            }
+            if(password.value.match(/[@#$%^&*]/)!=null){
+                valid('char', 'fa-check', 'fa-times');
+            }
+            else{
+                invalid('char', 'fa-check', 'fa-times');
+            }
+            if(password.value.length > 7){
+                valid('more8', 'fa-check', 'fa-times');
+            }
+            else{
+                invalid('more8', 'fa-check', 'fa-times');
+            }
+        }
+    </script>
+</body>
+</html>
