@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            user-select: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #FFF;
+        }
+        .box{
+            position: relative;
+            width: 360px;
+            height: 80px;
+            border: 5px solid rgb(250, 135, 160);
+            background: #FFF;
+        }
+
+        .box .front-face, .box .back-face{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .box .front-face{
+            line-height: 70px;
+            text-align: center;
+            font-size: 24px;
+            letter-spacing: .5px;
+            color: #FFF;
+            background: rgb(241, 44, 87);
+            transform-origin: left;
+            transition: .4s;
+        }
+
+        .box:hover .front-face{
+            transform: rotateY(100deg) skewY(5deg);
+        }
+
+        .box:hover .front-face p{
+            opacity: 0;
+            transition: .4s;
+        }
+
+        .box:hover .front-face span{
+            width: 100%;
+            height: 100%;
+            transform: rotateY(-100deg) skewY(5deg);
+        }
+
+        .box .back-face{
+            background: rgb(250, 135, 160);
+            line-height: 65px;
+            text-align: center;
+            box-shadow: inset 0 0 15px rgb(241, 44, 87);
+        }
+
+        .box .back-face input{
+            width: 65%;
+            height: 50%;
+            padding-left: 12px;
+            color: rgb(241, 44, 87);
+            font-weight: 600;
+            border: 1px solid rgb(241, 44, 87);
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            transition: .4s;
+        }
+
+        .box .back-face button{
+            cursor: pointer;
+            width: 25%;
+            height: 50%;
+            color: #FFF;
+            background: rgb(241, 44, 87);
+            letter-spacing: .5px;
+            border: 1px solid rgb(241, 44, 87);
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="back-face">
+            <input type="email" required>
+            <button>Submit</button>
+        </div>
+        <div class="front-face">
+            <p>Suscribete</p>
+        </div>
+    </div>
+</body>
+</html>
