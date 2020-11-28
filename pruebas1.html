@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+    <style>
+       body{
+            font-family: Arial, Helvetica, sans-serif;
+            background:#000;
+            color: #FFF;
+        } 
+
+        .container{
+            margin: 330px auto 100px auto;
+            width: 400px;
+            text-align: center;
+            position: relative;
+        }
+
+        .progress2{
+            border-radius: 30px;
+            background-color: #FFF;
+        }
+
+        .progress-bar2{
+            height: 18px;
+            border-radius: 30px;
+            transition: .4s linear;
+            transition-property: width, background-color;
+        }
+
+        .progress-moved .progress-bar2{
+            background-color: #f3c623;
+            animation: progress 5s infinite;
+        }
+
+        @keyframes progress {
+            0%{
+                width: 0%;
+                background: #F9BCCA;
+            }
+            100%{
+                width: 100%;
+                background: #f3c623;
+                box-shadow: 0 0 40px #f3c623;
+            }
+        }
+
+        .icon{
+            color: #f3c623;
+            animation: icon 5s infinite;
+            background-color: transparent;
+            padding: 0 400px 20px 0;
+        }
+
+        @keyframes icon {
+            0%{
+                opacity: 0.2;
+                text-shadow: 0 0 0 #f3c623;
+            }
+            100%{
+                opacity: 1;
+                text-shadow: 0 0 10px #f3c623;
+            }
+        }
+
+        .loader{
+            --p: 0;
+            animation: p 5s steps(100) infinite;
+            counter-reset: p var(--p);
+            font-size: 1.2em;
+            position: absolute;
+            bottom: 45px;
+            left: 325px;
+            color: #f3c623;
+        }
+
+        .loader::after{
+            content: counter(p) "%";
+        }
+
+        @keyframes p {
+            /* 20%{
+                --p: 20;
+            }
+            40%{
+                --p: 40;
+            }
+            60%{
+                --p: 60;
+            }
+            80%{
+                --p: 80;
+            } */
+            90%, 100%{
+                --p: 100;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!--No funciono-->
+    <div class="container">
+       <i class="fas fas-3x fa-battery-full icon"></i>
+       <div class="progress2 progress-moved">
+           <div class="progress-bar2"></div>
+           <div class="loader" style="--n: 0 --f:1"></div>
+       </div>
+    </div>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <!-- <script>
+        for(var i = 0; i<3; i++){
+            start(i)
+        }
+        function start(i){
+            var percent = document.querySelector(`.progress${i} .percent-num`);
+            var progressing = document.querySelector(`.progress${i} .progressing`)
+            var margin = document.querySelector(`progress${i} .margin`)
+
+            requestAnimationFrame(grow)
+
+            var progress = 0;
+            var random = parseInt(Math.random() * 100);
+
+            function grow(){
+                progress += 1;
+                console.log(random);
+                if(progress <= random){
+                    percent.innerHTML = parseInt(progress) + "%";
+                    progressing.style.width = progress + "%";
+                    margin.style.left = progress + "%";
+                    requestAnimationFrame(grow);
+                }
+            }
+        }
+    </script> -->
+    <script>
+        CSS.registerProperty({
+            name: "--p",
+            syntax: "<interger>",
+            initialValue: 0,
+            inherits: true
+        });
+    </script>
+</body>
+</html>
