@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .menu{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #000;
+        }
+        .hamburger{
+            display: inline-block;
+            cursor: pointer;
+            transition-property: opacity, filter;
+            transition-duration: .15s;
+            transition-timing-function: linear;
+            border: 0;
+            z-index: 9999999;
+            background-color: #ff3535;
+            margin: 30px;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .hamburger .is-active .hamburger-inner,
+        .hamburger .is-active .hamburger-inner::before,
+        .hamburger .is-active .hamburger-inner::after{
+            background-color: #FFF;
+        }
+
+        .hamburger:hover, .hamburger:focus{
+            outline: unset;
+        }
+
+        .hamburger-box{
+            width: 40px;
+            height: 4px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .hamburger-inner{
+            display: block;
+            top: 50%;
+        }
+
+        .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
+            width: 40px;
+            height: 4px;
+            background-color: #FFF;
+            border-radius: 4px;
+            position: absolute;
+            transition-property: transform;
+            transition-duration: .15s;
+            transition-timing-function: ease;
+        }
+        .hamburger-inner::before, .hamburger-inner::after{
+            content: '';
+            display: block;
+        }
+        .hamburger-inner::before{
+            top: -10px;
+        }
+        .hamburger-inner::after{
+            bottom: -10px;
+        }
+        /*Flechas*/
+    </style>
+</head>
+<body>
+    <!--https://www.instagram.com/p/CDeTWEXghqV/-->
+    <button class="hamburger fas fa-bars">
+        <a href="">
+            <div class="hamburger-box">
+                <div class="hamburger-inner"></div>
+            </div>
+        </a>
+    </button>
+    <button class="hamburger fas fa-bars">
+        <a href="">
+            <div class="hamburger-box">
+                <div class="hamburger-inner"></div>
+            </div>
+        </a>
+    </button>
+    <button class="hamburger fas fa-bars">
+        <a href="">
+            <div class="hamburger-box">
+                <div class="hamburger-inner"></div>
+            </div>
+        </a>
+    </button>
+    <button class="hamburger fas fa-bars">
+        <a href="">
+            <div class="hamburger-box">
+                <div class="hamburger-inner"></div>
+            </div>
+        </a>
+    </button>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+</body>
+</html>
