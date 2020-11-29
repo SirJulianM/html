@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .checkbox{
+            cursor: pointer;
+            position: relative;
+            width: 100px;
+            height: 50px;
+            margin-bottom: 25px;
+            border: 2px solid #fd8999;
+            border-radius: 50px;
+            transition: .3s;
+        }
+        .checkbox .toggle{
+           position: absolute;
+           left: -2px;
+           top: 1px;
+           width: 48px;
+           height: 48px;
+           border-radius: 50px;
+           background: #fd8999;
+           transition: .3s;
+        }
+        .checkbox .toggle .eye{
+            position: absolute;
+            width: 7px;
+            height: 2px;
+            top: 18px;
+            border-radius: 0;
+            background: #fff;
+            transition: .3s;
+        }
+        .checkbox .toggle .eye:nth-child(1){
+            left: 12px;
+        }
+        .checkbox .toggle .eye:nth-child(2){
+            left: 28px;
+        }
+        .checkbox .toggle .mouth{
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            left: 14px;
+            border-radius: 30px;
+            top: 30px;
+            border-top: 2px solid #ffffff;
+            transition: .3s;
+        }
+
+        input{
+            display: none;
+        }
+
+        input:checked ~ .checkbox{
+            background: #fd8999;
+        }
+
+        input:checked ~ .checkbox .toggle{
+            left: 49px;
+            top: 0px;
+            width: 46px;
+            height: 46px;
+            background: #fff;
+        }
+        input:checked ~.checkbox .toggle .mouth{
+            border-radius: 50px;
+            border-bottom: 3px solid #fd8999;
+            border-top: 0;
+            top: 18px;
+        }
+        input:checked ~.checkbox .toggle .eye{
+            background: #fd8999;
+            border: 0;
+            border-radius: 50px;
+            height: 7px;
+            top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!--https://www.instagram.com/p/CA28_S0AcPD/-->
+    <input type="checkbox" name="" id="">
+    <div class="checkbox" onclick="check()">
+        <div class="toggle">
+            <span class="eye"></span>
+            <span class="eye"></span>
+            <span class="mouth"></span>
+        </div>
+    </div>
+    <script>
+        const checkbox = document.querySelector('.checkbox');
+        let input = document.querySelector('input');
+
+        function check(){
+            input.checked ? input.checked = false : input.checked = true;
+        }
+    </script>
+</body>
+</html>
