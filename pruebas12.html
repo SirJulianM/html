@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #1a1818;
+        }
+        .container label{
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 50px;
+            margin: 0 20px;
+            font-size: 24px;
+            color: #727272;
+            transition: all .2s;
+        }
+
+        .container label:hover{
+            color: #FFF;
+        }
+
+        input{
+            display: none;
+        }
+
+        #fa-instagram:checked ~ .container .fa-instagram{
+            color: #e1306c;
+            transform: scale(1.1);
+            background: linear-gradient(45deg, #252323 50%, #302c2c 50%);
+            box-shadow: 0 0 20px #e1306c;
+        }
+
+        #fa-facebook-f:checked ~ .container .fa-facebook-f{
+            color: #3b5998;
+            transform: scale(1.1);
+            background: linear-gradient(45deg, #252323 50%, #302c2c 50%);
+            box-shadow: 0 0 20px #3b5998;
+        }
+
+        #fa-twitter:checked ~ .container .fa-twitter{
+            color: #1da1f2;
+            transform: scale(1.1);
+            background: linear-gradient(45deg, #252323 50%, #302c2c 50%);
+            box-shadow: 0 0 20px #1da1f2;
+        }
+
+        #fa-youtube:checked ~ .container .fa-youtube{
+            color: #ff0000;
+            transform: scale(1.1);
+            background: linear-gradient(45deg, #252323 50%, #302c2c 50%);
+            box-shadow: 0 0 20px #ff0000;
+        }
+
+        #fa-google:checked ~ .container .fa-google{
+            color: #f7b529;
+            transform: scale(1.1);
+            background: linear-gradient(45deg, #252323 50%, #302c2c 50%);
+            box-shadow: 0 0 20px #f7b529;
+        }
+    </style>
+</head>
+<body>
+    <!--https://www.instagram.com/p/CA8NBZPAgcC/-->
+    <input type="checkbox" id="fa-facebook-f">
+    <input type="checkbox" id="fa-instagram">
+    <input type="checkbox" id="fa-youtube">
+    <input type="checkbox" id="fa-twitter">
+    <input type="checkbox" id="fa-google">
+    <div class="container">
+        <label for="fa-facebook-f" class="fab fa-facebook-f"></label>
+        <label for="fa-instagram" class="fab fa-instagram"></label>
+        <label for="fa-youtube" class="fab fa-youtube"></label>
+        <label for="fa-twitter" class="fab fa-twitter"></label>
+        <label for="fa-google" class="fab fa-google"></label>
+    </div>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+</body>
+</html>
