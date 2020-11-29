@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card{
+            position: relative;
+            width: 280px;
+            height: 320px;
+            text-align: center;
+            overflow: hidden;
+            background: url('MonikCard1.jpg') no-repeat center;
+            background-size: cover;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,.5);
+        }
+        .card .surface{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 0;
+            opacity: 0;
+            background: #000;
+            transition: .2s linear;
+        }
+
+        .card h1{
+            letter-spacing: .5px;
+            font-size: 26px;
+            color: #f1f1f1;
+            opacity: 0;
+            transform: translateX(30px) translateY(280px);
+            transition: .4s;
+        }
+
+        .card h3{
+            letter-spacing: .5px;
+            font-size: 14px;
+            color: #f3f3f3;
+            opacity: 0;
+            transform: translateY(270px) translateX(28px);
+            transition: .4s;
+        }
+
+        .card .fab{
+            cursor: pointer;
+            display: flex;
+            width: 30px;
+            height: 30px;
+            padding: 7px 8px;
+            font-size: 16px;
+            color: rgb(248,94,94);
+            background: #FFF;
+            border-radius: 50%;
+            margin: 10px;
+            opacity: 0;
+            transform: translateY(135px) translateX(-50px);
+            transition: .3s;
+        }
+
+        .card:hover .surface{
+            opacity: .8;
+            height: 45%;
+        }
+
+        .card:hover h1{
+            opacity: 1;
+            transform: translateX(30px) translateY(210px);
+            transition-delay: .4s;
+        }
+
+        .card:hover h3{
+            opacity: 1;
+            transform: translateX(28px) translateY(230px);
+            transition-delay: .4s;
+        }
+
+        .card:hover .fab{
+            opacity: 1;
+            transform: translateY(135px) translateX(5px);
+        }
+
+        .card:hover .fa-instagram{
+            transition-delay: .2s;
+        }
+
+        .card:hover .fa-twitter{
+            transition-delay: .4s;
+        }
+
+        .card:hover .fa-google{
+            transition-delay: .6s;
+        }
+    </style>
+</head>
+<body>
+    <!--https://www.instagram.com/p/CA5iMaegv-r/-->
+    <div class="card">
+        <spam class="surface"></spam>
+        <h1>Mónica Hincapié</h1>
+        <h3>Dueña del taconazo verdolaga</h3>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-google"></i>
+    </div>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+</body>
+</html>
