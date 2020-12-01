@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: #171c26;
+        }
+        h1{
+            color: #FFF;
+            text-align: center;
+            text-transform: uppercase;
+            font-family: 'Century Gothic';
+            margin: 30px 0;
+            font-weight: bolder;
+        }
+        .img-grid{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .grid-item{
+            width: 300px;
+            max-height: 200px;
+            margin: 0 20px 20px;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all .3s;
+        }
+        img{
+            display: block;
+            max-width: 100%;
+            transition: all .3s;
+        }
+        .grid-item:hover{
+            outline: 5px solid #FFF;
+            outline-offset: 5px;
+        }
+        .grid-item:hover img{
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <!--https://www.instagram.com/p/CEBkV1-ghIX/-->
+    <div class="gallery">
+        <h1>Mónik Gallery</h1>
+        <div class="img-grid">
+            <div class="grid-item">
+                <a href="MonikCard.jpg">
+                    <img src="MonikCard.jpg" alt="">
+                </a>
+            </div>
+            <div class="grid-item">
+                <a href="MonikCard.jpg">
+                    <img src="MonikCard.jpg" alt="">
+                </a>
+            </div>
+            <div class="grid-item">
+                <a href="MonikCard.jpg">
+                    <img src="MonikCard.jpg" alt="">
+                </a>
+            </div>
+            <div class="grid-item">
+                <a href="MonikCard1.jpg">
+                    <img src="MonikCard1.jpg" alt="">
+                </a>
+            </div>
+            <div class="grid-item">
+                <a href="MonikCard1.jpg">
+                    <img src="MonikCard1.jpg" alt="">
+                </a>
+            </div>
+            <div class="grid-item">
+                <a href="MonikCard1.jpg">
+                    <img src="MonikCard1.jpg" alt="">
+                </a>
+            </div>
+            <div class="grid-item">
+                <a href="MonikCard.jpg">
+                    <img src="MonikCard.jpg" alt="">
+                </a>
+            </div>
+            <div class="grid-item">
+                <a href="MonikCard.jpg">
+                    <img src="MonikCard.jpg" alt="">
+                </a>
+            </div>
+            <div class="grid-item">
+                <a href="MonikCard.jpg">
+                    <img src="MonikCard.jpg" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
