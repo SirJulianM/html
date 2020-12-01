@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 1.6;
+            background-color: #eee;
+        }
+        .container{
+            width: 500px;
+            height: 350px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            background-color: #FFF;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .6);
+            border-radius: 10px;
+        }
+        .container span{
+            height: 100%;
+            background-image: url("MonikCard1.jpg");
+            background-size: cover;
+            background-repeat: repeat;
+            position: absolute;
+            transition: all 1s;
+            border-radius: 5px;
+        }
+        .container span:nth-child(1){
+            width: 100%;
+            z-index: 6;
+            transition-delay: 0s;
+        }
+        /* .container span:nth-child(2){
+            width: 100%;
+            z-index: 5;
+            transition-delay: 0.2s;
+        }
+        .container span:nth-child(3){
+            width: 75%;
+            z-index: 4;
+            transition-delay: 0.4s;
+        }
+        .container span:nth-child(4){
+            width: 100%;
+            z-index: 3;
+            transition-delay: 0.6s;
+        } */
+        .container:hover span{
+            transform: translateY(-100%);
+        }
+        .container:hover span:nth-child(1){
+            transition-delay: 0.6s;
+        }
+        /* .container:hover span:nth-child(2){
+            transition-delay: 0.4s;
+        }
+        .container:hover span:nth-child(3){
+            transition-delay: 0.2s;
+        }
+        .container:hover span:nth-child(4){
+            transition-delay: 0s;
+        } */
+        .content{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100%;
+            padding: 0 30px;
+            text-transform: capitalize;
+            font-family: 'Century Gothic';
+            text-align: center;
+            transform: translateY(100%);
+            transition: all 1.5s;
+            transition-delay: 0.3s;
+            color: #444;
+        }
+        .content p{
+            margin: 20px 0 30px;
+        }
+        .content a{
+            text-decoration: none;
+            color: #444;
+            padding: 10px 20px;
+            border: 3px solid #444;
+            font-weight: bolder;
+        }
+        .container:hover .content{
+            transform: translateY(0);
+        } 
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span></span>
+        <!-- <span></span>
+        <span></span>
+        <span></span> -->
+        <div class="content">
+            <h2>I am Mónica Hincapié</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quas id, facere harum cum, molestias,
+                excepturi obcaecati placeat nobis laudantium dolorum? Dolorem, sit? Quas aliquam molestias beatae est.
+            </p>
+            <a href="" class="btn">
+                See my work &#8594;
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>
