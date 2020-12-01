@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+            font-family: sans-serif;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        nav{
+            display: flex;
+            background: #3ac9f5;
+            height: 60px;
+            line-height: 65px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(0,0,0,.2);
+        }
+        nav ul{
+            display: flex;
+            text-align: center;
+        }
+        nav ul li{
+            cursor: pointer;
+            height: 100%;
+            padding: 0 10px;
+            transition: .4s;
+        }
+        nav ul li:hover{
+            background: #2eacd3;
+        }
+        nav ul li a{
+            color: #f2f2f2;
+        }
+        nav ul li a span{
+            position: absolute;
+            letter-spacing: .5px;
+            transform: translate(-70px);
+            opacity: 0;
+            pointer-events: none;
+            transition: .4s all;
+        }
+        nav ul li a i{
+            font-size: 22px;
+            margin: 0 38px;
+            transition: .4s all;
+        }
+        nav ul li:hover a span{
+            transform: translateX(-55px);
+            opacity: 1;
+            pointer-events: visible;
+        }
+        nav ul li:hover a i{
+            transform: translateX(-25px);
+        }
+    </style>
+</head>
+<body>
+    <!--https://www.instagram.com/p/CDtysRwAGji/-->
+    <nav>
+        <ul>
+            <li>
+                <a href="">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fas fa-bell"></i>
+                    <span>Alert</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fas fa-hourglass-end"></i>
+                    <span>Time</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Chat</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+</body>
+</html>
