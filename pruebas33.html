@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container{
+            display: flex;
+            align-items: center;
+        }
+        .container img {
+            background: url('MonikCard1.jpg') no-repeat;
+            background-size: contain;
+            background-position: center;
+            width: 500px;
+            height: 600px;
+            border-radius: 10px;
+            filter: blur(5px);
+            transition: 1s;
+            box-shadow: 0 0 25px rgba(0, 0, 0, .5);
+        }
+        .container .loading{
+            z-index: 1;
+            opacity: .9;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            left: 50px;
+            border-radius: 50%;
+            background: #FFF;
+            animation: scale .8s infinite;
+        }
+
+        @keyframes scale {
+            100%{
+                transform: scale(5);
+                opacity: .6;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!--https://www.instagram.com/p/B_z9-TPg1OB/-->
+    <div class="container">
+        <img src="MonikCard1.jpg" alt="">
+        <div class="loading"></div>
+    </div>
+    <script>
+        setTimeout(()=>{
+            document.querySelector('.loading').style.opacity = 0;
+            document.querySelector('.loading').style.animation = 'none';
+            document.querySelector('img').style.filter = 'blur(0)';
+        }, 3000);
+    </script>
+</body>
+</html>
