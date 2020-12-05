@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .image, .torch{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('MonikCard1.jpg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .image{
+            filter: brightness(15%);
+        }
+        .torch{
+            clip-path: circle(80px at 0 0);
+        }
+    </style>
+</head>
+<body>
+    <!--https://www.instagram.com/p/CD-_rU3Afch/-->
+    <div class="container">
+        <div class="image"></div>
+        <div class="torch"></div>
+    </div>
+    <script>
+        const container = document.querySelector('.container');
+        container.addEventListener("mousemove",(e)=>{
+            const torch = document.querySelector('.torch');
+            torch.style.clipPath = `circle(60px at ${e.offsetX}px ${e.offsetY}px)`;
+        })
+    </script>
+</body>
+</html>
