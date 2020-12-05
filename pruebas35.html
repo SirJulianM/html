@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .pagination{
+            position: relative;
+            background: linear-gradient(#101f27f1 50%, #101f27 50%);
+            color: #FFF;
+            width: 450px;
+            height: 70px;
+            border-radius: 50px;
+            box-shadow: 3px 5px 20px rgb(46,46,46);
+            text-align: center;
+            line-height: 70px;
+            overflow: hidden;
+        }
+        .pagination label{
+            position: absolute;
+            font-size: 34px;
+            cursor: pointer;
+            width: 50px;
+            opacity: .7;
+            transition: all .4s;
+        }
+        .pagination label:hover{
+            opacity: 1;
+        }
+        .pagination .perv{
+            left: 5px;
+        }
+        .pagination .right{
+            right: 5px;
+        }
+        .pagination .p-item{
+            font-size: 1.5em;
+            padding: 10px 20px;
+            z-index: 1;
+            opacity: .2;
+            transition: all .4s;
+        }
+    </style>
+</head>
+<body>
+    <!--https://www.instagram.com/p/B_kmlNNA3ZO/-->
+    <div class="pagination">
+        <label for="" class="perv">
+            <i class="fas fa-chevron-left"></i>
+        </label>
+        <span class="p-item item1">1</span>
+        <span class="p-item item2">2</span>
+        <span class="p-item item3">3</span>
+        <span class="p-item item4">4</span>
+        <span class="p-item item5">5</span>
+        <span class="p-item item6">6</span>
+        <label for="" class="next">
+            <i class="fas fa-chevron-right"></i>
+        </label>
+    </div>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <script>
+        const perv = document.querySelector('.perv');
+        const next = document.querySelector('.next');
+        document.querySelector(`.item1`).style.opacity = '.9';
+        let item = 1;
+        next.addEventListener('click', () =>{
+            item = item + 1;
+            if(item < 7){
+                document.querySelector(`.item${item-1}`).style.opacity = '.2'
+                document.querySelector(`.item${item}`).style.opacity = '.9'
+            }else{
+                item = 1;
+                document.querySelector(`.item1`).style.opacity = '.9'
+                document.querySelector(`.item6`).style.opacity = '.2'
+            }
+        });
+        perv.addEventListener('click', () =>{
+            item = item - 1;
+            if(item >= 1){
+                document.querySelector(`.item${item+1}`).style.opacity = '.2'
+                document.querySelector(`.item${item}`).style.opacity = '.9'
+            }else{
+                item = 6;
+                document.querySelector(`.item1`).style.opacity = '.9'
+                document.querySelector(`.item6`).style.opacity = '.2'
+            }
+        });
+    </script>
+</body>
+</html>
