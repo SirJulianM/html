@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #FF8C8C;
+            font-family: 'Century Gothic';
+        }
+        .card{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 350px;
+            height: 500px;
+            border-radius: 40px;
+            background-color: #F8F0F0;
+            text-transform: uppercase;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0,0,0.25);
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            margin: 45px auto 0;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .profile-img img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .name{
+            font-weight: 500;
+            font-size: 20px;
+            color: #D39999;
+            margin-top: 25px;
+        }
+        .profession{
+            color: #676767;
+            font-weight: 400;
+            font-size: 13px;
+        }
+        .detail{
+            text-transform: none;
+            font-weight: 300;
+            font-size: 13px;
+            margin: 25px 0;
+            padding: 0 20px;
+        }
+
+        .work-btn{
+            display: inline-block;
+            color: #634F4F;
+            border-radius: 30px;
+            text-decoration: none;
+            background-color: #FF9a9a;
+            font-weight: 400;
+            margin-top: 10px;
+            padding: 15px 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="card-container">
+            <div class="profile-img">
+                <img src="MonikCard1.jpg" alt="">
+            </div>
+            <h4 class="name">Mónik Hincapié</h4>
+            <p class="profession">Gerencia de proyectos</p>
+            <p class="detail">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error aut, minima natus nemo, reiciendis velit
+                repellat saepe voluptatum eveniet neque quaerat quas ullam, labore dolores! Alias.
+            </p>
+            <a href="" class="work-btn">Ver más</a>
+        </div>
+    </div>
+</body>
+
+</html>
