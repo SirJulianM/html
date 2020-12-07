@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 400px;
+            height: 500px;
+            background-image: url('MonikCard1.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 4px;
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, .8);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .ribbon-container{
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+        }
+        .ribbon{
+            width: 212.2px;
+            height: 50px;
+            background-color: #f24338;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 32px;
+            right: -48px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+        }
+        .ribbon span{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+            color: #FFF;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-weight: bold;
+        }
+        .ribbon-container::before, .ribbon-container::after{
+            content: "";
+            position: absolute;
+            border-top: 3px solid transparent;
+            border-left: 3px solid transparent;
+            border-right: 3px solid #313131;
+            border-bottom: 3px solid #313131;
+            z-index: -1;
+        }
+        .ribbon-container::after{
+            bottom: 1px;
+            right: -1px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--https://www.instagram.com/p/B_kVDYAgLC4/-->
+    <div class="container">
+        <div class="ribbon-container">
+            <div class="ribbon">
+                <span>Beautiful Girl</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
