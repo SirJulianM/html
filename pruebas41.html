@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 450px;
+            height: 500px;
+        }
+        .container img{
+            width: 100%;
+            height: 100%;
+        }
+        .container::after{
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            box-shadow: 0 0 100px black inset;
+        }
+    </style>
+</head>
+<body>
+    <!--https://www.instagram.com/p/CCdwpE9ghwx/-->
+    <div class="container">
+        <img src="MonikCard1.jpg" alt="">
+    </div>
+</body>
+</html>
