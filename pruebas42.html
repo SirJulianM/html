@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 450px;
+            height: 500px;
+            border: 2px solid gray;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .container img{
+            width: 100%;
+            height: 100%;
+            transition: transform 1s ease;
+        }
+        .container:hover img{
+            transform: scale(1.6) rotate(20deg);
+        }
+    </style>
+</head>
+<body>
+    <!--https://www.instagram.com/p/B9_3xetAEuL/-->
+    <div class="container">
+        <img src="MonikCard.jpg" alt="alteracion">
+    </div>
+</body>
+</html>
