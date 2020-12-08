@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+        .nav-list{
+            list-style-type: none;
+            display: flex;
+        }
+        .nav-links{
+            position: relative;
+            color: #eee;
+            letter-spacing: 2px;
+            text-decoration: none;
+            padding: 12px;
+            margin: 0 18px;
+        }
+        .nav-links::before{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            transition: width 0.2 ease-out;
+            background-color: #FF5151;
+        }
+        .nav-links:hover::before{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!--https://www.instagram.com/p/B9CO-oqAiam/-->
+    <nav>
+        <ul class="nav-list">
+            <li><a href="" class="nav-links">Home</a></li>
+            <li><a href="" class="nav-links">Home</a></li>
+            <li><a href="" class="nav-links">Home</a></li>
+            <li><a href="" class="nav-links">Home</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
