@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-user-select: none;
+        }
+        body{
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(45deg, #FFF 0%, green 100%);
+        }
+        .center, .font-face, .back-face, .contents{
+            position: absolute;
+        }
+        .center{
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 400px;
+            width: 290px;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        .font-face, .back-face{
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)), url('MonikCard1.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            backface-visibility: hidden;
+            transform-style: preserve-3d;
+            transition: transform .7s cubic-bezier(.4, .2, .2, .1);
+        }
+        .contents{
+            left: 0;
+            top: 50%;
+            width: 100%;
+            perspective: 100px;
+            transform: translateY(-50%) translateZ(60px) scale(.94);
+        }
+
+        .front p{
+            color: #FFF;
+            font-size: 35px;
+            margin: 15px;
+        }
+        .front p::after{
+            content: '';
+            display: block;
+            left: 0;
+            right: 0;
+            height: 2px;
+            width: 100px;
+            background: #FFF;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+        .front span{
+            color: #FFF;
+            font-size: 23px;
+        }
+        .back-face{
+            transform: rotateY(180deg);
+            background: linear-gradient(45deg, #044348 0%, #032535 100%);
+        }
+        .back {
+            color: #FFF;
+        }
+        .back h2{
+            font-weight: lighter;
+            font-size: 28px;
+            padding-bottom: 5px;
+        }
+        .back span{
+            font-size: 25px;
+        }
+        .icons{
+            margin: 10px 0;
+        }
+        .icons i{
+            color: #042f4b;
+            background: #FFF;
+            font-size: 20px;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            line-height: 40px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        .center:hover > .back-face{
+            transform: rotateY(0deg);
+        }
+        .center:hover > .font-face{
+            transform: rotateY(-180deg);
+        }
+    </style>
+</head>
+<body>
+    <!--https://www.instagram.com/p/B_Ky0KyjFiA/-->
+    <div class="center">
+        <div class="font-face">
+            <div class="contents front">
+                <p>Mónica Hincapié</p>
+                <span>Especialista en gerencia</span>
+            </div>
+        </div>
+        <div class="back-face">
+            <div class="contents back">
+                <h2>Hincha del más grande</h2>
+                <br>
+                <span>Sigueme</span>
+                <div class="icons">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+</body>
+</html>
