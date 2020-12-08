@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+        body{
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .profile-card{
+            width: 420px;
+            overflow: hidden;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 0 10px #000;
+        }
+        .top-section{
+            padding: 60px 40px;
+            background: #2c2c54aa;
+        }
+        .message, .notif{
+            position: absolute;
+            top: 40px;
+            font-size: 20px;
+            cursor: pointer;
+            color: #ffffff50;
+        }
+        .message{
+            right: 40px;
+        }
+        .notif{
+            left: 40px;
+        }
+        .pic{
+            width: 150px;
+            height: 150px;
+            margin: auto;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 2px solid #2c3e50;
+            border-radius: 50%;
+            position: relative;
+        }
+        .pic::after{
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            border: 1px solid #2c3e50;
+            left: 0;
+            top: 0;
+            box-sizing: border-box;
+            border-radius: 50%;
+            animation: wave 1.5s infinite linear;
+        }
+        @keyframes wave {
+            to{
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+        .pic img{
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+        .name{
+            color: #f1f1f1;
+            font-size: 28px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .tag{
+            font-size: 18px;
+            color: #222;
+        }
+        .bottom-section{
+            background: #f1f1f1;
+            padding: 60px 40px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            text-transform: uppercase;
+        }
+        .border{
+            width: 1px;
+            height: 20px;
+            background: #bbb;
+            margin: 0 30px;
+        }
+        .bottom-section span{
+            font-size: 14px;
+            display: flex;
+        }
+        .social-media{
+            position: absolute;
+            width: 100%;
+            top: -30px;
+            left: 0;
+            z-index: 1;
+        }
+        .social-media i{
+            width: 60px;
+            height: 60px;
+            background: #2c3e50;
+            border-radius: 50%;
+            color: #f1f1f1;
+            font-size: 20px;
+            line-height: 60px !important;
+            margin: 0 10px;
+            position: relative;
+        }
+        .social-media i::after{
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: #2c3e50;
+            left: 0;
+            top: 0;
+            box-sizing: border-box;
+            border-radius: 50%;
+            z-index: -1;
+            transition: .4s linear;
+        }
+
+        .social-media i:hover::after{
+            transform: scale(1.4);
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <!--https://www.instagram.com/p/B_DB9AjjknY/-->
+    <div class="profile-card">
+        <div class="top-section">
+            <i class="message fas fa-envelope"></i>
+            <i class="notif fas fa-bell"></i>
+            <div class="pic">
+                <img src="MonikCard.jpg" alt=""></div>
+            <div class="name">Mónica Hincapié</div>
+            <div class="tag">@Monikhin</div>
+        </div>
+        <div class="bottom-section">
+            <div class="social-media">
+                <a href="">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+            <div class="video">9M<span>Videos</span></div>
+            <div class="border"></div>
+            <div class="suscribers">3K<span>Suscriptores</span></div>
+            <div class="border"></div>
+            <div class="views">15M<span>Vistas</span></div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+</body>
+</html>
